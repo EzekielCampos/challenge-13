@@ -26,11 +26,11 @@ Product.init(
 
     },
     price:{
-      DataTypes:DECIMAL,
+      type:DataTypes.DECIMAL(10,2),
       allowNull:false,
-      validate:{
-        isDecimal:true
-      }
+      // validate:{
+      //   isDecimal:true
+      // }
     },
 
     stock:{
