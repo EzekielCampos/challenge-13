@@ -26,9 +26,10 @@ Tag.belongsToMany(Product, {
   }
 })
 
-Product.hasMany(ProductTag, {foreignKey:"product_id"})
+// Product.hasMany(Tag, {foreignKey:"tag_id"})
 
-Tag.hasMany(ProductTag,{foreignKey:"tag_id"})
+
+// Tag.hasMany(ProductTag,{foreignKey:"tag_id"})
 
 
 
