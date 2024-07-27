@@ -1,11 +1,15 @@
 const router = require('express').Router();
 const { where } = require('sequelize');
-const { Category, Product,Tag } = require('../../models');
+const { Category, Product, Tag } = require('../../models');
+const {verifyCategoryBody}= require('./middleware')
+
 
 // The `/api/categories` endpoint
 
 router.get('/', async(req, res) => {
-  // find all categories
+
+  try{
+      // find all categories
   // be sure to include its associated Products
 
   const result = await Category.findAll(
@@ -16,29 +20,52 @@ router.get('/', async(req, res) => {
     res.json(result);
     // console.log(result);
 
+  }
+  catch(error){
+    res.json(error);
+  }
+
+
 });
 
+
 router.get('/:id', async(req, res) => {
-  // find one category by its `id` value
+
+  try{
+      // find one category by its `id` value
   // be sure to include its associated Products
 const result = await Category.findByPk(req.params.id, 
-          {include:[{model:Product}]
+  {include:[{model:Product}]
 })
 
 res.json(result);
 
+  }
+  catch(error){
+    res.json(error);
+  }
+
+
 });
 
-router.post('/', async(req, res) => {
-  // create a new category
-    const result = await Category.create(req.body);
-    res.json(result);
+router.post('/',verifyCategoryBody, async(req, res) => {
+  try{
+      // create a new category
+      const result = await Category.create(req.body);
+      res.json(result);
+
+  }
+  catch(error){
+    res.json(error);
+  }
+
   
-
 });
 
-router.put('/:id', async(req, res) => {
-  // update a category by its `id` value
+router.put('/:id', verifyCategoryBody, async(req, res) => {
+
+  try{
+     // update a category by its `id` value
   const result = await Category.update(req.body,{
 
     where:{
@@ -47,10 +74,20 @@ router.put('/:id', async(req, res) => {
   })
 
   res.json(result);
+
+  }
+  catch(error){
+
+    res.json(error);
+    
+  }
+ 
 });
 
 router.delete('/:id', async(req, res) => {
-  // delete a category by its `id` value
+
+  try{
+      // delete a category by its `id` value
   const result = await Category.destroy({
 
     where:{
@@ -59,6 +96,12 @@ router.delete('/:id', async(req, res) => {
   })
 
   res.json(result);
+
+  }
+  catch(error){
+    res.json(error);
+  }
+
 });
 
 module.exports = router;
