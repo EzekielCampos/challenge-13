@@ -4,6 +4,7 @@ const sequelize = require('../config/connection.js');
 
 class Category extends Model {}
 
+// This model will hold all the columns for the Categories
 Category.init(
   {
    id:{
@@ -11,13 +12,11 @@ Category.init(
       allowNull:false,
       primaryKey:true,
       autoIncrement:true
-
    },
    category_name:{
       type:DataTypes.STRING,
       allowNull:false
    }
-
 
   },
   {

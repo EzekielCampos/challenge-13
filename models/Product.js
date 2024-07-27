@@ -7,7 +7,7 @@ const { DECIMAL } = require('sequelize');
 // Initialize Product model (table) by extending off Sequelize's Model class
 class Product extends Model {}
 
-// set up fields and rules for Product model
+// The Product model will hold all the different products that are available and what category they belong under
 Product.init(
   {
    
@@ -23,14 +23,14 @@ Product.init(
       type:DataTypes.STRING,
       allowNull:false,
 
-
     },
+    // The validator will make sure that the value is a decimal
     price:{
       type:DataTypes.DECIMAL(10,2),
       allowNull:false,
-      // validate:{
-      //   isDecimal:true
-      // }
+      validate:{
+        isDecimal:true
+      }
     },
 
     stock:{
@@ -43,7 +43,7 @@ Product.init(
       }
 
     },
-
+    // This column will be a reference to the Category model 
     category_id:{
       type:DataTypes.INTEGER,
       references:{

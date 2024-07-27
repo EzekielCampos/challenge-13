@@ -4,6 +4,7 @@ const sequelize = require('../config/connection.js');
 
 class Tag extends Model {}
 
+// This model will hold the name of the Tag that products have 
 Tag.init(
   {
     
