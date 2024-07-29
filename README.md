@@ -1,7 +1,12 @@
 
 # Object Relational Mapping with E-Commerce Backend
 
-[![License: MIT](https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/65dd9eb5aaca434fac4f1c34_License-MIT-blue.svg)](/LICENSE)
+<!-- [![License: MIT](https://cdn.prod.website-files.com/5e0f1144930a8bc8aace526c/65dd9eb5aaca434fac4f1c34_License-MIT-blue.svg)](/LICENSE) -->
+[![MIT License Badge](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](/LICENSE)
+![Sequelize Badge](https://img.shields.io/badge/sequelize-323330?style=for-the-badge&logo=sequelize&logoColor=blue)
+![PostgreSQL Badge](https://img.shields.io/badge/postgresql-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Express Badge](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+
 
 
 ## Table of Contents
@@ -33,7 +38,7 @@ For this project one can either clone the repo or download the files to be used 
 This application is used to demonstrate how to fetch, create, update, and delete data from the backend for a retail website.  This is vital so that users can have an easy interface to interact that responsive and accurate.  If one would like  to create the database open the directory ‘db’ in the terminal and type the command “psql -U postgres” which will give the user an option to enter their password.  After run the command “\i schema.sql” which runs this file to create the database that will be used for the program.  Now that the database is ready, create a .env file and input your Postgres credentials.  These credentials will allow Sequelize to connect to the database without having to explicitly write them out, don't forget to put the .env file inside gitignore.  Since all the models for the database are declared, seed the data to the tables by running the command “node seeds/index.js” which will go to the file and add all the data to each table through Sequelize.  Final step is to start the server using the command “node server.js” and hit the specific routes to perform one of the CRUD methods for the specified models.
 
 ### Demo Video
-[Video Link](https://drive.google.com/file/d/1AQgrPRA8GkEkONhIwqgE5h5lphJOMZEr/view?usp=sharing)
+[Video Link](https://drive.google.com/file/d/1AQgrPRA8GkEkONhIwqgE5h5lphJOMZEr/view?usp=drive_link)
 ## Contributing
 
 N/A
